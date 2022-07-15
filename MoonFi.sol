@@ -1036,7 +1036,7 @@ interface IUniswapV2Router02 {
 /* import {Ownable} from "lib/openzeppelin-contracts/contracts/access/Ownable.sol"; */
 /* import {SafeMath} from "lib/openzeppelin-contracts/contracts/utils/math/SafeMath.sol"; */
 
-contract SUIJIN is ERC20, Ownable {
+contract MoonFi is ERC20, Ownable {
     using SafeMath for uint256;
 
     IUniswapV2Router02 public immutable uniswapV2Router;
