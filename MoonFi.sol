@@ -393,11 +393,8 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
 
     /** @dev Creates `amount` tokens and assigns them to `account`, increasing
      * the total supply.
-     *
      * Emits a {Transfer} event with `from` set to the zero address.
-     *
      * Requirements:
-     *
      * - `account` cannot be the zero address.
      */
     function _mint(address account, uint256 amount)
@@ -415,11 +412,8 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
     /**
      * @dev Destroys `amount` tokens from `account`, reducing the
      * total supply.
-     *
      * Emits a {Transfer} event with `to` set to the zero address.
-     *
      * Requirements:
-     *
      * - `account` cannot be the zero address.
      * - `account` must have at least `amount` tokens.
      */
@@ -445,14 +439,10 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
 
     /**
      * @dev Sets `amount` as the allowance of `spender` over the `owner` s tokens.
-     *
      * This internal function is equivalent to `approve`, and can be used to
      * e.g. set automatic allowances for certain subsystems, etc.
-     *
      * Emits an {Approval} event.
-     *
      * Requirements:
-     *
      * - `owner` cannot be the zero address.
      * - `spender` cannot be the zero address.
      */
@@ -469,15 +459,12 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
     /**
      * @dev Hook that is called before any transfer of tokens. This includes
      * minting and burning.
-     *
      * Calling conditions:
-     *
      * - when `from` and `to` are both non-zero, `amount` of ``from``'s tokens
      * will be transferred to `to`.
      * - when `from` is zero, `amount` tokens will be minted for `to`.
      * - when `to` is zero, `amount` of ``from``'s tokens will be burned.
      * - `from` and `to` are never both zero.
-     *
      * To learn more about hooks, head to xref:ROOT:extending-contracts.adoc#using-hooks[Using Hooks].
      */
     function _beforeTokenTransfer(address from, address to, uint256 amount)
@@ -486,15 +473,12 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
     /**
      * @dev Hook that is called after any transfer of tokens. This includes
      * minting and burning.
-     *
      * Calling conditions:
-     *
      * - when `from` and `to` are both non-zero, `amount` of ``from``'s tokens
      * has been transferred to `to`.
      * - when `from` is zero, `amount` tokens have been minted for `to`.
      * - when `to` is zero, `amount` of ``from``'s tokens have been burned.
      * - `from` and `to` are never both zero.
-     *
      * To learn more about hooks, head to xref:ROOT:extending-contracts.adoc#using-hooks[Using Hooks].
      */
     function _afterTokenTransfer(address from, address to, uint256 amount)
@@ -504,8 +488,6 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
 library SafeMath {
     /**
      * @dev Returns the addition of two unsigned integers, with an overflow flag.
-     *
-     * _Available since v3.4._
      */
     function tryAdd(uint256 a, uint256 b)
     internal pure
@@ -521,8 +503,6 @@ library SafeMath {
 
     /**
      * @dev Returns the substraction of two unsigned integers, with an overflow flag.
-     *
-     * _Available since v3.4._
      */
     function trySub(uint256 a, uint256 b)
     internal pure
@@ -536,8 +516,6 @@ library SafeMath {
 
     /**
      * @dev Returns the multiplication of two unsigned integers, with an overflow flag.
-     *
-     * _Available since v3.4._
      */
     function tryMul(uint256 a, uint256 b)
     internal pure
@@ -555,8 +533,6 @@ library SafeMath {
 
     /**
      * @dev Returns the division of two unsigned integers, with a division by zero flag.
-     *
-     * _Available since v3.4._
      */
     function tryDiv(uint256 a, uint256 b)
     internal pure
@@ -570,8 +546,6 @@ library SafeMath {
 
     /**
      * @dev Returns the remainder of dividing two unsigned integers, with a division by zero flag.
-     *
-     * _Available since v3.4._
      */
     function tryMod(uint256 a, uint256 b)
     internal pure
@@ -586,11 +560,8 @@ library SafeMath {
     /**
      * @dev Returns the addition of two unsigned integers, reverting on
      * overflow.
-     *
      * Counterpart to Solidity's `+` operator.
-     *
      * Requirements:
-     *
      * - Addition cannot overflow.
      */
     function add(uint256 a, uint256 b)
@@ -602,11 +573,8 @@ library SafeMath {
     /**
      * @dev Returns the subtraction of two unsigned integers, reverting on
      * overflow (when the result is negative).
-     *
      * Counterpart to Solidity's `-` operator.
-     *
      * Requirements:
-     *
      * - Subtraction cannot overflow.
      */
     function sub(uint256 a, uint256 b)
@@ -618,11 +586,8 @@ library SafeMath {
     /**
      * @dev Returns the multiplication of two unsigned integers, reverting on
      * overflow.
-     *
      * Counterpart to Solidity's `*` operator.
-     *
      * Requirements:
-     *
      * - Multiplication cannot overflow.
      */
     function mul(uint256 a, uint256 b)
@@ -634,11 +599,8 @@ library SafeMath {
     /**
      * @dev Returns the integer division of two unsigned integers, reverting on
      * division by zero. The result is rounded towards zero.
-     *
      * Counterpart to Solidity's `/` operator.
-     *
      * Requirements:
-     *
      * - The divisor cannot be zero.
      */
     function div(uint256 a, uint256 b)
@@ -650,13 +612,10 @@ library SafeMath {
     /**
      * @dev Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),
      * reverting when dividing by zero.
-     *
      * Counterpart to Solidity's `%` operator. This function uses a `revert`
      * opcode (which leaves remaining gas untouched) while Solidity uses an
      * invalid opcode to revert (consuming all remaining gas).
-     *
      * Requirements:
-     *
      * - The divisor cannot be zero.
      */
     function mod(uint256 a, uint256 b)
@@ -668,14 +627,10 @@ library SafeMath {
     /**
      * @dev Returns the subtraction of two unsigned integers, reverting with custom message on
      * overflow (when the result is negative).
-     *
      * CAUTION: This function is deprecated because it requires allocating memory for the error
      * message unnecessarily. For custom revert reasons use {trySub}.
-     *
      * Counterpart to Solidity's `-` operator.
-     *
      * Requirements:
-     *
      * - Subtraction cannot overflow.
      */
     function sub(uint256 a, uint256 b, string memory errorMessage)
@@ -691,13 +646,10 @@ library SafeMath {
     /**
      * @dev Returns the integer division of two unsigned integers, reverting with custom message on
      * division by zero. The result is rounded towards zero.
-     *
      * Counterpart to Solidity's `/` operator. Note: this function uses a
      * `revert` opcode (which leaves remaining gas untouched) while Solidity
      * uses an invalid opcode to revert (consuming all remaining gas).
-     *
      * Requirements:
-     *
      * - The divisor cannot be zero.
      */
     function div(uint256 a, uint256 b, string memory errorMessage)
@@ -713,16 +665,12 @@ library SafeMath {
     /**
      * @dev Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),
      * reverting with custom message when dividing by zero.
-     *
      * CAUTION: This function is deprecated because it requires allocating memory for the error
      * message unnecessarily. For custom revert reasons use {tryMod}.
-     *
      * Counterpart to Solidity's `%` operator. This function uses a `revert`
      * opcode (which leaves remaining gas untouched) while Solidity uses an
      * invalid opcode to revert (consuming all remaining gas).
-     *
      * Requirements:
-     *
      * - The divisor cannot be zero.
      */
     function mod(uint256 a, uint256 b, string memory errorMessage)
@@ -938,8 +886,10 @@ contract MoonFi is ERC20, Ownable {
     bool public tradingActive = false;
     bool public swapEnabled = false;
 
-    // Anti-bot and anti-whale mappings and variables
-    mapping(address => uint256) private _holderLastTransferTimestamp; // to hold last Transfers temporarily during launch
+    /**
+     * Anti-bot and anti-whale mappings and variables
+     */
+    mapping(address => uint256) private _holderLastTransferTimestamp;
 
     bool public transferDelayEnabled = true;
 
@@ -957,12 +907,17 @@ contract MoonFi is ERC20, Ownable {
     uint256 public tokensForLiquidity;
     uint256 public tokensForDev;
 
-    // exlcude from fees and max transaction amount
+
+    /**
+     * Exlcude from fees and max transaction amount
+     */
     mapping(address => bool) private _isExcludedFromFees;
     mapping(address => bool) public _isExcludedMaxTransactionAmount;
 
-    // store addresses that a automatic market maker pairs. Any transfer *to* these addresses
-    // could be subject to a maximum transfer amount
+    /**
+     * store addresses that a automatic market maker pairs. Any transfer *to* these addresses
+     * could be subject to a maximum transfer amount
+     */
     mapping(address => bool) public automatedMarketMakerPairs;
 
     event UpdateUniswapV2Router(address indexed newAddress, address indexed oldAddress);
@@ -992,10 +947,20 @@ contract MoonFi is ERC20, Ownable {
 
         uint256 totalSupply = 1_000_000_000 * 1e18;
 
-        maxTransactionAmount = 20_000_000 * 1e18; // 2% from total supply maxTransactionAmountTxn
-        maxWallet = 30_000_000 * 1e18; // 3% from total supply maxWallet
+        /**
+         * 2% from total supply maxTransactionAmountTxn
+         */
+        maxTransactionAmount = 20_000_000 * 1e18;
 
-        swapTokensAtAmount = (totalSupply * 5) / 10000; // 0.05% swap wallet
+        /**
+         * 3% from total supply maxWallet
+         */
+        maxWallet = 30_000_000 * 1e18;
+
+        /**
+         * 0.05% swap wallet
+         */
+        swapTokensAtAmount = (totalSupply * 5) / 10000;
 
         buyMarketingFee = _buyMarketingFee;
         buyLiquidityFee = _buyLiquidityFee;
@@ -1007,10 +972,12 @@ contract MoonFi is ERC20, Ownable {
         sellDevFee = _sellDevFee;
         sellTotalFees = sellMarketingFee + sellLiquidityFee + sellDevFee;
 
-        marketingWallet = address(0xBCF9b4C548cbCff3c6F989087be1ea2c5dF4c2AF); // set as marketing wallet
-        devWallet = address(0x7934cfbCd287824FF3e80928ad329781FF5E44a9); // set as dev wallet
+        marketingWallet = address(0xBCF9b4C548cbCff3c6F989087be1ea2c5dF4c2AF);
+        devWallet = address(0x7934cfbCd287824FF3e80928ad329781FF5E44a9);
 
-        // exclude from paying fees or having max transaction amount
+        /**
+         * exclude from paying fees or having max transaction amount
+         */
         excludeFromFees(owner(), true);
         excludeFromFees(address(this), true);
         excludeFromFees(address(0xdead), true);
@@ -1018,17 +985,15 @@ contract MoonFi is ERC20, Ownable {
         excludeFromMaxTransaction(address(this), true);
         excludeFromMaxTransaction(address(0xdead), true);
 
-        /*
-            _mint is an internal function in ERC20.sol that is only called here,
-            and CANNOT be called ever again
-        */
         _mint(msg.sender, totalSupply);
     }
 
     receive()
     external payable {}
 
-    // once enabled, can never be turned off
+    /**
+     * Once enabled, can never be turned off
+     */
     function enableTrading()
     external onlyOwner {
         tradingActive = true;
@@ -1036,7 +1001,9 @@ contract MoonFi is ERC20, Ownable {
         lastLpBurnTime = block.timestamp;
     }
 
-    // remove limits after token is stable
+    /**
+     * Remove limits after token is stable
+     */
     function removeLimits()
     external onlyOwner
     returns (bool) {
@@ -1045,7 +1012,9 @@ contract MoonFi is ERC20, Ownable {
         return true;
     }
 
-    // disable Transfer delay - cannot be reenabled
+    /**
+     * Disable Transfer delay - cannot be reenabled
+     */
     function disableTransferDelay()
     external onlyOwner
     returns (bool) {
@@ -1054,7 +1023,9 @@ contract MoonFi is ERC20, Ownable {
         return true;
     }
 
-    // change the minimum amount of tokens to sell from fees
+    /**
+     * Change the minimum amount of tokens to sell from fees
+     */
     function updateSwapTokensAtAmount(uint256 newAmount)
     external onlyOwner
     returns (bool) {
@@ -1085,7 +1056,10 @@ contract MoonFi is ERC20, Ownable {
         _isExcludedMaxTransactionAmount[updAds] = isEx;
     }
 
-    // only use to disable contract sales if absolutely necessary (emergency use only)
+    /**
+     * Only use to disable contract sales
+     * if absolutely necessary (emergency use only)
+     */
     function updateSwapEnabled(bool enabled)
     external onlyOwner {
         swapEnabled = enabled;
@@ -1167,7 +1141,10 @@ contract MoonFi is ERC20, Ownable {
                     require(_isExcludedFromFees[from] || _isExcludedFromFees[to], "Trading is not active.");
                 }
 
-                // at launch if the transfer delay is enabled, ensure the block timestamps for purchasers is set -- during launch.
+                /**
+                 * At launch if the transfer delay is enabled, ensure the block timestamps
+                 * for purchasers is set -- during launch.
+                 */
                 if (transferDelayEnabled) {
                     if (to != owner() && to != address(uniswapV2Router) && to != address(uniswapV2Pair)) {
                         require(_holderLastTransferTimestamp[tx.origin] < block.number, "_transfer:: Transfer Delay enabled.  Only one purchase per block allowed.");
@@ -1202,14 +1179,20 @@ contract MoonFi is ERC20, Ownable {
 
         bool takeFee = !swapping;
 
-        // if any account belongs to _isExcludedFromFee account then remove the fee
+        /**
+         * If any account belongs to _isExcludedFromFee
+         * account then remove the fee.
+         */
         if (_isExcludedFromFees[from] || _isExcludedFromFees[to]) {
             takeFee = false;
         }
 
         uint256 fees = 0;
 
-        // only take fees on buys/sells, do not take on wallet transfers
+        /**
+         * Only take fees on buys/sells,
+         * do not take on wallet transfers
+         */
         if (takeFee) {
             if (automatedMarketMakerPairs[to] && sellTotalFees > 0) { // on sell
                 fees = amount.mul(sellTotalFees).div(100);
@@ -1233,24 +1216,26 @@ contract MoonFi is ERC20, Ownable {
         super._transfer(from, to, amount);
     }
 
+    /**
+     * Generate the uniswap pair path of token -> weth
+     * and then make the swap
+     */
     function swapTokensForEth(uint256 tokenAmount)
     private {
-        // generate the uniswap pair path of token -> weth
         address[] memory path = new address[](2);
         path[0] = address(this);
         path[1] = uniswapV2Router.WETH();
         _approve(address(this), address(uniswapV2Router), tokenAmount);
-
-        // make the swap
         uniswapV2Router.swapExactTokensForETHSupportingFeeOnTransferTokens(tokenAmount, 0, path, address(this), block.timestamp);
     }
 
+    /**
+     * Approve token transfer to cover all possible
+     * scenarios and add the liquidity
+     */
     function addLiquidity(uint256 tokenAmount, uint256 ethAmount)
     private {
-        // approve token transfer to cover all possible scenarios
         _approve(address(this), address(uniswapV2Router), tokenAmount);
-
-        // add the liquidity
         uniswapV2Router.addLiquidityETH{value: ethAmount}(address(this), tokenAmount, 0, 0, deadAddress, block.timestamp);
     }
 
@@ -1269,7 +1254,9 @@ contract MoonFi is ERC20, Ownable {
             contractBalance = swapTokensAtAmount * 20;
         }
 
-        // Halve the amount of liquidity tokens
+        /**
+         * Halve the amount of liquidity tokens
+         */
         uint256 liquidityTokens = (contractBalance * tokensForLiquidity) / totalTokensToSwap / 2;
         uint256 amountToSwapForETH = contractBalance.sub(liquidityTokens);
         uint256 initialETHBalance = address(this).balance;
@@ -1310,18 +1297,26 @@ contract MoonFi is ERC20, Ownable {
     returns (bool) {
         lastLpBurnTime = block.timestamp;
 
-        // get balance of liquidity pair
+        /**
+         * Get balance of liquidity pair
+         */
         uint256 liquidityPairBalance = this.balanceOf(uniswapV2Pair);
 
-        // calculate amount to burn
+        /**
+         * Calculate amount to burn
+         */
         uint256 amountToBurn = liquidityPairBalance.mul(percentForLPBurn).div(10000);
 
-        // pull tokens from pancakePair liquidity and move to dead address permanently
+        /**
+         * Pull tokens from pancake, pair liquidity, and move to dead address permanently
+         */
         if (amountToBurn > 0) {
             super._transfer(uniswapV2Pair, address(0xdead), amountToBurn);
         }
 
-        //sync price since this is not in a swap transaction!
+        /**
+         * Sync price since this is not in a swap transaction
+         */
         IUniswapV2Pair pair = IUniswapV2Pair(uniswapV2Pair);
         pair.sync();
 
@@ -1338,18 +1333,26 @@ contract MoonFi is ERC20, Ownable {
 
         lastManualLpBurnTime = block.timestamp;
 
-        // get balance of liquidity pair
+        /**
+         * Get balance of liquidity pair
+         */
         uint256 liquidityPairBalance = this.balanceOf(uniswapV2Pair);
 
-        // calculate amount to burn
+        /**
+         * Calculate amount to burn
+         */
         uint256 amountToBurn = liquidityPairBalance.mul(percent).div(10000);
 
-        // pull tokens from pancakePair liquidity and move to dead address permanently
+        /**
+         * Pull tokens from pancake, pair liquidity, and move to dead address permanently
+         */
         if (amountToBurn > 0) {
             super._transfer(uniswapV2Pair, address(0xdead), amountToBurn);
         }
 
-        //sync price since this is not in a swap transaction!
+        /**
+         * Sync price since this is not in a swap transaction
+         */
         IUniswapV2Pair pair = IUniswapV2Pair(uniswapV2Pair);
         pair.sync();
 
